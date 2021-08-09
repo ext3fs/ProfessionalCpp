@@ -7,3 +7,4 @@ literal pooling				- p130
 raw literal string			- p131
 using namespace std::string_literals	- p136
 string_view				- p141
+std::size()				- p281
