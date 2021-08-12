@@ -12,15 +12,15 @@ int main(void)
 	int b[kcnt];
 	long long sum = 0;
 
-	#pragma omp parallel num_threads(4)
+	#pragma omp parallel
 	{
 		for(int i=0; i<kcnt; ++i)
-			c[i] = a[i] + b[i];
-
-		#pragma omp critical	
-		for(int i=0; i<kcnt; ++i)
-			sum += c[i];
+			c[i] = a[i] + b[i]; 
 	}
+
+	for(int i=0; i<kcnt; ++i)
+		sum += c[i];
+	
 	cout << sum << endl;	
 	return 0;
 }
