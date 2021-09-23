@@ -1,11 +1,11 @@
 CC	= g++
 OBJECTS	= UserInterface.o Employee.o Database.o 
-TARGET	= curr
+TARGET	= test
 
 
-.SUFFIXES : .c .o
+.SUFFIXES : .cpp .o
 
-.c.o :
+.cpp.o :
 	$(CC) -std=c++17 -O2 -c -Wall $<
 
 $(TARGET)	: $(OBJECTS)
