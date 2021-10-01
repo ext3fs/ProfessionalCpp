@@ -2,12 +2,13 @@ nested namespace								- p58
 literal(값자체가 이름)								- p59
 fallthrough									- p71
 structured binding								- p81
-initializer list								- p84
+initializer list								- p83
+생성자 이니셜라이져								- p103
 literal pooling									- p130
 raw literal string								- p131
 using namespace std::string_literals						- p136
 string_view									- p141
-std::size()									- p281
+std::size(ar) -> 배열의 크기 리턴						- p281
 MVC(model - view - controller)							- p201
 vector []과 at()의 차이 -> 경계값 검사 						- p247
 decltype()									- p293
@@ -50,7 +51,22 @@ virtual 메서드는 vtable 참조 							- p430
 소멸자 = default; -> 복제생성자, 복제대입연산자 자동생성			- p434 
 메서드에 final(override 방지)							- p434
 pure virtual method, abstract class						- p451		
-std::optional<string> val, val.value_or("")					- p452		
+std::optional<string> val, val.value_or("")					- p452
+using Base::Base -> 부모의 생성자 모두 상속(Base()는 제외)			- p470
+default 인수는 컴파일 타임에 결정						- p483
+symbolic constant -> const double PI = 3.14, #define PI (3.14)			- p483
+파생클래스에서 복제생성자를 명시적으로 정의하면 
+	-> 부모클래스의  복제생성자를 호출해야함				- p486
+RTTI(run time type information)							- p488
+구조적 바인딩									- p508
+anonymous namespace								- p517
+타입 엘리어스 (using IntPtr = int*)						- p521
+auto -> 레퍼런스, const 속성을 제거함						- p530
+attribute : noreturn, deprecated, fallthrough, nodiscard, maybe_unused		- p537
+사용자 정의 리터럴								- p541
+순환의존관계 -> 전방 선언 							- p545
+_has_include("파일명") 								- p546
 
+<template>---------------------------------------------------------------------------
 
 terminate(), set_terminate()							- p653
