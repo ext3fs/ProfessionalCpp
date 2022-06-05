@@ -1,6 +1,6 @@
 CC	= g++
-OBJECTS	= curr.o 
-TARGET	= curr
+OBJECTS	= SpreadsheetTest.o Spreadsheet.o SpreadsheetCell.o SpreadsheetImpl.o
+TARGET	= test
 
 
 .SUFFIXES : .cpp .o
@@ -8,7 +8,7 @@ TARGET	= curr
 .cpp.o :
 	$(CC) -std=c++17 -O2 -c -g -Wall $<
 
-$(TARGET)	: $(OBJECTS)
+$(TARGET) : $(OBJECTS)
 	$(CC) -o $(TARGET) $(OBJECTS)
 	
 clean :

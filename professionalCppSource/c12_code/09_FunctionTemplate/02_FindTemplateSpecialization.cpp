@@ -45,7 +45,7 @@ int main()
 	size_t res;
 	res = Find<const char*>(word, words, sizeWords);// const char*에 대해 특수화된 버전을 호출한다.
 	res = Find(word, words, sizeWords);             // const char*에 대해 특수화된 버전을 호출한다.
-	res = Find(word, words);						// const char*에 대해 특수화된 버전을 호출한다.
+	res = Find(word, words);			// const char*에 대해 특수화된 버전을 호출한다.
 	if (res != NOT_FOUND)
 		cout << res << endl;
 	else

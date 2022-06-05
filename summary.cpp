@@ -1,3 +1,8 @@
+복사생성자	: 기본생성자로 생성후 일일히 카피
+복사대입연산자	: 복사생성자로 임시클래스 생성후 swap
+이동생성자	: 기본생성자로 생성후 swap
+이동대입연산자	: 이동생성자로 임시클래스 생성후 swap
+
 nested namespace								- p58
 literal(값자체가 이름)								- p59
 fallthrough									- p71
@@ -12,6 +17,7 @@ std::size(ar) -> 배열의 크기 리턴						- p281
 MVC(model - view - controller)							- p201
 vector []과 at()의 차이 -> 경계값 검사 						- p247
 decltype()									- p293
+smart pointer는 복사할수없다 -> 이동해야한다					- p293
 weak_ptr									- p297
 enable_shared_from_this								- p299
 dangling pointer								- p307
@@ -47,7 +53,8 @@ static binding, early binding (컴파일타임)					- p429
 dynamic binding, late binding (런타임)						- p430
 virtual 메서드는 vtable 참조 							- p430
 소멸자는 무조건 virtual (상속될때 문제생길수 있음)				- p433
-사용자선언 소멸자가 있을때 복제생성자, 복제대입연산자 자동생성X			- p434 
+사용자선언 소멸자가 있을때 복제생성자, 복제대입연산자 자동생성X	
+	-> 복제생성자,복제대입연산자를 default로 선언해주면됨			- p434 
 소멸자 = default; -> 복제생성자, 복제대입연산자 자동생성			- p434 
 메서드에 final(override 방지)							- p434
 pure virtual method, abstract class						- p451		
@@ -66,7 +73,17 @@ attribute : noreturn, deprecated, fallthrough, nodiscard, maybe_unused		- p537
 사용자 정의 리터럴								- p541
 순환의존관계 -> 전방 선언 							- p545
 _has_include("파일명") 								- p546
-
-<template>---------------------------------------------------------------------------
+Grid<T> 에서 Grid는 템플릿이름, Grid<T>는 클래스를 지칭,
+	Grid<int>는 템플릿을 인스턴스화한 이름					- p563
+템플릿을 정의할때는 반드시 메서드 구현코드를 헤더파일에 적어야한다 		- p563
+영 초기화 문법									- p564
+영 초기화 문법									- p564
+selective instantiation								- p568
+explicit class template instantiation						- p568
 
 terminate(), set_terminate()							- p653
+exception 객체는 최소 한번 이상 이동하거나 복제된다 				- p653
+	-> 그래서 복제생성, 복제대입, 이동생성, 이동대입을 고려해야한다
+
+
+

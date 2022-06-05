@@ -1,12 +1,12 @@
 CC	= g++
-OBJECTS	= curr.o 
-TARGET	= curr
+OBJECTS	= GameBoard.o GameBoardTest.o
+TARGET	= test
 
 
 .SUFFIXES : .cpp .o
 
 .cpp.o :
-	$(CC) -std=c++17 -O2 -c -g -Wall $<
+	$(CC) -std=c++17 -O2 -c -Wall $<
 
 $(TARGET)	: $(OBJECTS)
 	$(CC) -o $(TARGET) $(OBJECTS)

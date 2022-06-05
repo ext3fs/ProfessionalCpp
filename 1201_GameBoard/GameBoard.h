@@ -14,16 +14,16 @@ class GameBoard
 {
 public:
 	explicit GameBoard(size_t width = kDefaultWidth, size_t height = kDefaultHeight);
-	virtual ~GameBoard() = default;    // 가상 디폴트 소멸자
-	GameBoard(const GameBoard& src);   // 복제 생성자
-	GameBoard& operator=(const GameBoard& rhs); // 대입 연산자
+	virtual ~GameBoard() = default;
 	
-	// 이동 생성자와 대입 연산자를 명시적으로 디폴트로 지정한다.
+	GameBoard(const GameBoard& src);
+	GameBoard& operator=(const GameBoard& rhs);
+	
 	GameBoard(GameBoard&& src) = default;
 	GameBoard& operator=(GameBoard&& src) = default;
 
-	std::unique_ptr<GamePiece>& at(size_t x, size_t y);
 	const std::unique_ptr<GamePiece>& at(size_t x, size_t y) const;
+	std::unique_ptr<GamePiece>& at(size_t x, size_t y);
 
 	size_t getHeight() const { return mHeight; }
 	size_t getWidth() const { return mWidth; }
